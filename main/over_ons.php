@@ -1,5 +1,6 @@
 <?php
-error_reporting(0);
+include_once("../includes/connect.php");
+// error_reporting(0);
 ?>
 
 <!DOCTYPE html>
@@ -54,8 +55,8 @@ error_reporting(0);
                             </div>
                         </div>
                     </div>
-                    <div class='session-naam'><a href="dashboard.php"><?php session_start();
-                                                                        echo $_SESSION['sess_name']; ?></a></div>
+                    <!-- <div class='session-naam'><a href="dashboard.php"><?php session_start();
+                                                                            echo $_SESSION['sess_name']; ?></a></div> -->
                 </div>
             </div>
             <div class="spacer"></div>
@@ -105,6 +106,38 @@ error_reporting(0);
                         <input class="helpdesk_form_input" type="text" required name="beschrijving" placeholder="Beschrijving">
                         <input class="helpdesk_form_input_submit2" type="submit" name="submit_review" value="Verzenden">
                     </form>
+                </div>
+                <div class='ShowReviewsOuter'>
+                    <div class="ShowReviewsInner">
+                        <?php
+                        $query = "SELECT * FROM reviews";
+                        $stmt = $conn->prepare($query);
+                        $stmt->execute();
+                        $result = $stmt->fetchAll();
+
+                        foreach ($result as $review) { ?>
+                            <div>
+                                <div class="ShowReviewsFlex">
+                                    <div class="ShowReviewsEmail">
+                                        <div><?php echo $review['email'] ?></div>
+                                    </div>
+                                    <div class="ShowReviewFlexInner">
+                                        <div class="aantal_reservering">
+                                            <div><?php echo $review['review'] ?></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ShowReviewsBeschrijvingOuter">
+                                    <div class="ShowReviewsBeschrijving">
+                                        <div><?php echo $review['beschrijving'] ?></div>
+                                    </div>
+                                </div>
+                                <hr></hr>
+                            </div>
+
+
+                        <?php } ?>
+                    </div>
                 </div>
             </div>
     </main>
