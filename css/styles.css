@@ -1756,14 +1756,19 @@ h1 {
 
 .ShowReviewsOuter {
   width: 55vw;
+  overflow-y: hidden;
   height: 50vh;
   background-color: #C7BEA2;
-  overflow-y: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-right: 5%;
 }
+
+.ShowReviewsOuter:hover {
+  overflow-y: auto;
+}
+
 
 .ShowReviewsInner {
   width: 45vw;
@@ -2029,5 +2034,4 @@ hr {
 ::-webkit-scrollbar-thumb:hover {
   background: #2800a0;
 } 
-
 /* Custom Scrollbar */
