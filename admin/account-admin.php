@@ -2,7 +2,7 @@
 
 
 session_start();
-if ($_SESSION['sess_name'] == "adminaccountje") {
+if ($_SESSION['sess_name'] == "admin") {
 } else {
     header('location:index.php');
 }

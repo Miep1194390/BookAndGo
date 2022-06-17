@@ -2015,12 +2015,15 @@ hr {
 /* Custom Scrollbar */
 
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
+  width: 20px;
   background: #f1f1f1;
+
 }
 ::-webkit-scrollbar-thumb {
+  border-radius: 30px;
   background: #00d66c;
 }
 ::-webkit-scrollbar-thumb:hover {
