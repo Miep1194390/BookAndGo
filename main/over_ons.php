@@ -1,6 +1,6 @@
 <?php
 include_once("../includes/connect.php");
-// error_reporting(0);
+error_reporting(0);
 ?>
 
 <!DOCTYPE html>
@@ -55,8 +55,8 @@ include_once("../includes/connect.php");
                             </div>
                         </div>
                     </div>
-                    <!-- <div class='session-naam'><a href="dashboard.php"><?php session_start();
-                                                                            echo $_SESSION['sess_name']; ?></a></div> -->
+                    <div class='session-naam'><a href="dashboard.php"><?php session_start();
+                                                                            echo $_SESSION['sess_name']; ?></a></div>
                 </div>
             </div>
             <div class="spacer"></div>
@@ -119,11 +119,15 @@ include_once("../includes/connect.php");
                             <div>
                                 <div class="ShowReviewsFlex">
                                     <div class="ShowReviewsEmail">
-                                        <div><?php echo $review['email'] ?></div>
+                                        <div>
+                                            <h1 class="email_reviews"><i class="fa-regular fa-user"></i><?php echo '  ' . $review['email'] ?></h1>
+                                        </div>
+
                                     </div>
                                     <div class="ShowReviewFlexInner">
                                         <div class="aantal_reservering">
-                                            <div><?php echo $review['review'] ?></div>
+                                            <div class="flex"><i class="fa-regular fa-star"></i></i><?php echo $review['review'] ?><div class="review_5">/5</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -132,10 +136,8 @@ include_once("../includes/connect.php");
                                         <div><?php echo $review['beschrijving'] ?></div>
                                     </div>
                                 </div>
-                                <hr></hr>
+                                <hr>
                             </div>
-
-
                         <?php } ?>
                     </div>
                 </div>
@@ -152,5 +154,7 @@ include_once("../includes/connect.php");
         </div>
     </footer>
     <script src="../js/main.js"></script>
+    <script src="https://kit.fontawesome.com/426386addb.js" crossorigin="anonymous"></script>
+
 
 </html>

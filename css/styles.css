@@ -1616,6 +1616,12 @@ h1 {
   color: white;
 }
 
+.email_reviews {
+  width: 43vw;
+  color: black;
+  font-weight: bold ;
+}
+
 .review_text {
   color: black;
   font-size: 20px;
@@ -1749,7 +1755,7 @@ h1 {
 }
 
 .ShowReviewsOuter {
-  width: 50vw;
+  width: 55vw;
   height: 50vh;
   background-color: #C7BEA2;
   overflow-y: auto;
@@ -1784,7 +1790,12 @@ h1 {
   padding-bottom: 5%;
 }
 
+hr {
+  margin-bottom: 30px;
+}
+
 .ShowReviewsEmail {
+  display: flex;
   font-size: 1.1vw;
 }
 
@@ -1923,6 +1934,12 @@ h1 {
 .update:hover {
   background-color: #FFC300;
 }
+
+.review_5 {
+  font-size: 12px;
+  opacity: 0.4;
+}
+
 
 .delete {
   background-color: #ff3268;
