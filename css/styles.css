@@ -1087,15 +1087,58 @@ p {
 }
 
 .helpdesk_form_input {
+  display: flex;
   background-color: #717171;
   opacity: 0.5;
   border: none;
-
   color: white;
   width: 20vw;
   padding: 2vh;
   margin-bottom: 1vh;
 }
+
+.range {
+  width: 18vw;
+}
+
+output {
+  padding-left: 5%;
+}
+
+input[type=range]{
+  -webkit-appearance: none;
+  background-color: transparent;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 300px;
+  height: 5px;
+  background-color: transparent;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #ff0145;
+  margin-top: -4.5px;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+
+
 
 .helpdesk_form_input::placeholder {
   color: white;
