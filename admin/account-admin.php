@@ -105,4 +105,5 @@ if ($_SESSION['sess_name'] == "adminaccountje") {
     </main>
 </body>
 <script src="https://kit.fontawesome.com/426386addb.js" crossorigin="anonymous"></script>
+
 </html>
