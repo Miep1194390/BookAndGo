@@ -99,7 +99,7 @@ error_reporting(0);
                     <form class="over-ons_form" action="review_redirect.php" method="POST">
                         <input class="helpdesk_form_input" type="email" required name="email_review" id="" placeholder="E-Mail">
                         <div class="helpdesk_form_input">
-                            <input class="range" type="range" value="3" min="0" max="5" required name="review" oninput="this.nextElementSibling.value = this.value">
+                            <input class="range" type="range" value="3" min="1" max="5" required name="review" oninput="this.nextElementSibling.value = this.value">
                             <output>3</output>
                         </div>
                         <input class="helpdesk_form_input" type="text" required name="beschrijving" placeholder="Beschrijving">
