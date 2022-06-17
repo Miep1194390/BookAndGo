@@ -1646,6 +1646,7 @@ h1 {
 
 .update  {
   background-color: #FFFFE0;
+  cursor: pointer;
   border: none;
   width: 4vw;
   border-radius: 8px;
@@ -1668,6 +1669,7 @@ h1 {
 }
 
 .create {
+  cursor: pointer;
   background-color: lightgreen;
   border: none;
   margin-left: 1vh;
@@ -1830,6 +1832,7 @@ h1 {
 
 .delete:hover {
   background-color: #ca2b55;
+  cursor: pointer;
 }
 
 .create {
