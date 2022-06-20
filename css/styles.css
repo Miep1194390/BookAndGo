@@ -702,7 +702,7 @@ p {
 
 .tableouter {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .tablevluchten thead tr {

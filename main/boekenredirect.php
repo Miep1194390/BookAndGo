@@ -1,3 +1,8 @@
+<?php
+include_once('../includes/connect.php');
+error_reporting(0);
+?>
+
 <!DOCTYPE html>
 <html class="html_boekenredirect" lang="en">
 
@@ -119,7 +124,11 @@
                     <div class="account-inloggen-form">
                         <form class='account_login' action="boekenredirect.php" method="post">
                             <div>
-                                <input class="account-inloggen-form-input" type="number" name="vluchtid" value="" placeholder="Vlucht Nummer" />
+                                <select class="account-inloggen-form-input" name="vluchtid">
+                                    <?php foreach ($results as $r) { ?>
+                                        <option value="<?php echo $r["id"]; ?>" placeholder="Vlucht Nummer"><?php echo $r["id"]; ?></option>
+                                    <?php } ?>
+                                    </select>
                             </div>
                             <div>
                                 <input class='account-inloggen-form-submit' type="submit" value="Boeken" name="Boeken"></input>
@@ -131,13 +140,12 @@
         </div>
     </main>
 
+
 </body>
 
 </html>
 
 <?php
-include_once('../includes/connect.php');
-error_reporting(0);
 $key = $_POST['vluchtid'];
 $query = $conn->prepare('SELECT id FROM vluchten WHERE id LIKE :keyword');
 $query->bindValue(":keyword", $key, PDO::PARAM_STR);
@@ -151,7 +159,8 @@ if ($rows != 0) {
     $sessie_id = $_SESSION['sess_user_id'];
     $sql = "INSERT INTO boekingen (boekingId, gebruikersId, vluchtId) VALUES ('', '$sessie_id', '$vluchtid')";
     $conn->exec($sql);
-    echo "<script>alert('Vlucht geboekt, Veel reis plezier!')</script>; <script>window.location = 'klantenservice.php'</script>";
+    header("Location: vluchtenannuleren.php");
+
 } else {
     header("Location: account.php");
 }
