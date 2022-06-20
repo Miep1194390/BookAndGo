@@ -1,6 +1,12 @@
 <?php
 include_once('../includes/connect.php');
 error_reporting(0);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../mailer/Exception.php';
+require '../mailer/PHPMailer.php';
+require '../mailer/SMTP.php';
 ?>
 
 <!DOCTYPE html>
@@ -160,8 +166,7 @@ if ($rows != 0) {
     $sql = "INSERT INTO boekingen (boekingId, gebruikersId, vluchtId) VALUES ('', '$sessie_id', '$vluchtid')";
     $conn->exec($sql);
     header("Location: vluchtenannuleren.php");
-
-} else {
+    } else {
     header("Location: account.php");
 }
 
