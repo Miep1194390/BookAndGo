@@ -88,7 +88,7 @@ error_reporting(0);
                         <h1 class="AirplaneText">Vluchten</h1>
                     </div>
                     <div class="VluchtenzoekenOuter">
-                        <form class="vluchtenzoeken"  name="form1" method="post" action="vluchten.php">
+                        <form class="vluchtenzoeken"  name="form1" method="post" action="boekenredirect.php">
                             <div class="ZoekenInvoerVeldenOuter">
                                 <h1 class="VluchtenZoekenHeader">Vanaf</h1>
                                 <input class="Vertrekluchthaven" type="text" placeholder="Vertrekluchthaven" name="search" aria-label="Search" required>
