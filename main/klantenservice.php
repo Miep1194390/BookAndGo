@@ -86,7 +86,7 @@ error_reporting(0);
                 </div>
             </div>
         </div>
-        <div class='klantenservice-form-outer'>
+        <div id='klantenservice-form-outerid' class='klantenservice-form-outer'>
             <div class='klantenservice-form-text'>Stuur ons een mailtje!</div>
             <div class='klantenservice-form-inner'>
                 <form class='klantenservice-form' action="../mailer/mailer.php" method="POST">
@@ -119,4 +119,5 @@ error_reporting(0);
     </main>
     
     <script src="../js/main.js"></script>
+    <script></script>
 </html>
