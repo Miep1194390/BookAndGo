@@ -50,7 +50,7 @@ if ($_SESSION['sess_name'] == "admin") {
             $stmt->execute();
             $result = $stmt->fetchAll();
             foreach ($result as $vlucht) { ?>
-              <form class="form-admin-crud"  action="../admin/vluchtAUTH.php" method="POST">
+              <form class="form-admin-crud" action="../admin/vluchtAUTH.php" method="POST">
                 <div class="id_reservering">
                   <input class="input-admin-crud" type="text" value="<?php echo $vlucht['id'] ?>" name="id" readonly />
                   <hr>
@@ -75,13 +75,11 @@ if ($_SESSION['sess_name'] == "admin") {
                   <input class="input-admin-crud" type="text" value="<?php echo $vlucht['seats'] ?>" name="seats" />
                   <hr>
                 </div>
-                <div class="update">
+                <div>
                   <button class="update" type="submit" name="update">Wijzigen</button>
                 </div>
-                <div class="delete">
-                  <button class="delete" type="submit" name="delete">
-                    <p>Wissen</p>
-                  </button>
+                <div>
+                  <button class="delete" type="submit" name="delete">Wissen</button>
                 </div>
               </form>
             <?php

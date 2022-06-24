@@ -83,7 +83,7 @@ if ($_SESSION['sess_name'] == "admin") {
                                     <input class="input-admin-crud" type="text" value="<?php echo $r['seats'] ?>" name="seats" />
                                     <hr>
                                 </div>
-                                <div class="delete">
+                                <div>
                                     <button class="delete" type="submit" name="delete"><p>Annuleren</p></button>
                                 </div>
                             </form>

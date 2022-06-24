@@ -77,13 +77,11 @@ if ($_SESSION['sess_name'] == "admin") {
                                     <input class="input-admin-crud" type="text" value="<?php echo $user['name'] ?>" name="name" />
                                     <hr>
                                 </div>
-                                <div class="update">
+                                <div>
                                     <button class="update" type="submit" name="update">Wijzigen</button>
                                 </div>
-                                <div class="delete">
-                                    <button class="delete" type="submit" name="delete">
-                                        <p>Wissen</p>
-                                    </button>
+                                <div>
+                                    <button class="delete" type="submit" name="delete">Wissen</button>
                                 </div>
                             </form>
 
