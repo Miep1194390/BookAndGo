@@ -403,7 +403,6 @@ svg {
 .mainbeige_vlucht_resultaten {
   width: 100%;
   height: auto;
-  background-color: #f3e5d8;
   padding-bottom: 50px;
 }
 
@@ -1472,11 +1471,6 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: auto; 
-  transition: color .3s ease;
-  position: relative;
-  top: 30px;
-  bottom: 50px;
   width: 70vw;
   height: fit-content;
   border-radius: 10px;
