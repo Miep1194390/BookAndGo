@@ -167,7 +167,7 @@ if ($rows != 0) {
     $conn->exec($sql);
     header("Location: vluchtenannuleren.php");
     } else {
-    header("Location: account.php");
+        header("Location: account.php");
 }
 
 ?>
