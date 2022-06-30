@@ -1,4 +1,5 @@
 <?php
+include_once("../includes/connect.php");
 error_reporting(0);
 ?>
 
@@ -16,15 +17,16 @@ error_reporting(0);
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <title>Book and Go | Over ons</title>
 </head>
+
 <body class="body_over-ons">
     <main>
         <div class="top-center">
-        <div class="header_vlucht_resultaten">
+            <div class="header_vlucht_resultaten">
                 <div class="headertext_vlucht_resultatenOuter">
                     <div class="headertext_vlucht_resultaten">
-                    <a class="header_logo" href="index.php" ><img class="header_logo" src="../media/BookAndGoLogo.jpg" alt="BookAndGoLogo"></a>
+                        <a class="header_logo" href="index.php"><img class="header_logo" src="../media/BookAndGoLogo.jpg" alt="BookAndGoLogo"></a>
                         <div class="header_logo_text">Book and Go</div>
-                    <div class="dropdown">
+                        <div class="dropdown">
                             <div class="Header-links">Beheren</div>
                             <div class="dropdown-content">
                                 <div><a href="index.php">Vlucht boeken</a></div>
@@ -53,7 +55,8 @@ error_reporting(0);
                             </div>
                         </div>
                     </div>
-                    <div class='session-naam'><a href="dashboard.php"><?php session_start(); echo $_SESSION['sess_name'];?></a></div>
+                    <div class='session-naam'><a href="dashboard.php"><?php session_start();
+                                                                            echo $_SESSION['sess_name']; ?></a></div>
                 </div>
             </div>
             <div class="spacer"></div>
@@ -81,7 +84,7 @@ error_reporting(0);
                             "Goed geïnspireerd&hellip; <span class="quote--highlight">is</span> ook goed."
                         </p>
                         <p class="quote--author">&ndash; Mirza & Ilias</p>
-                    
+
                     </div>
                 </div>
 
@@ -94,14 +97,49 @@ error_reporting(0);
             <div class="container_reviews">
                 <div class="reviews">
                     <p class="review_text">Schrijf hier je review!</p>
-                <form class="over-ons_form" action="review_redirect.php" method="POST">
-                        <input class="helpdesk_form_input" type="email" required name="email_review" id=""
-                            placeholder="E-Mail">
-                        <input class="helpdesk_form_input" type="number" min="0" max="5" required name="review" id=""
-                            placeholder="Sterren">
+                    <form class="over-ons_form" action="review_redirect.php" method="POST">
+                        <input class="helpdesk_form_input" type="email" required name="email_review" id="" placeholder="E-Mail">
+                        <div class="helpdesk_form_input">
+                            <input class="range" type="range" value="3" min="1" max="5" required name="review" oninput="this.nextElementSibling.value = this.value">
+                            <output>3</output>
+                        </div>
                         <input class="helpdesk_form_input" type="text" required name="beschrijving" placeholder="Beschrijving">
                         <input class="helpdesk_form_input_submit2" type="submit" name="submit_review" value="Verzenden">
                     </form>
+                </div>
+                <div class='ShowReviewsOuter'>
+                    <div class="ShowReviewsInner">
+                        <?php
+                        $query = "SELECT * FROM reviews";
+                        $stmt = $conn->prepare($query);
+                        $stmt->execute();
+                        $result = $stmt->fetchAll();
+
+                        foreach ($result as $review) { ?>
+                            <div>
+                                <div class="ShowReviewsFlex">
+                                    <div class="ShowReviewsEmail">
+                                        <div>
+                                            <h1 class="email_reviews"><i class="fa-regular fa-user"></i><?php echo '  ' . $review['email'] ?></h1>
+                                        </div>
+
+                                    </div>
+                                    <div class="ShowReviewFlexInner">
+                                        <div class="aantal_reservering">
+                                            <div class="flex"><i class="fa-regular fa-star"></i></i><?php echo $review['review'] ?><div class="review_5">/5</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ShowReviewsBeschrijvingOuter">
+                                    <div class="ShowReviewsBeschrijving">
+                                        <div><?php echo $review['beschrijving'] ?></div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                        <?php } ?>
+                    </div>
                 </div>
             </div>
     </main>
@@ -114,6 +152,9 @@ error_reporting(0);
                 <a class="headerlinks-vluchten" href="over_ons.php">Over Ons</a>
             </div>
         </div>
-        </footer>
+    </footer>
     <script src="../js/main.js"></script>
+    <script src="https://kit.fontawesome.com/426386addb.js" crossorigin="anonymous"></script>
+
+
 </html>

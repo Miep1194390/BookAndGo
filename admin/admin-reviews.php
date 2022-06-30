@@ -2,7 +2,7 @@
 include_once('../includes/connect.php');
 
 session_start();
-if ($_SESSION['sess_name'] == "adminaccountje") {
+if ($_SESSION['sess_name'] == "admin") {
 } else {
     header('Location: ../main/index.php');
 }
@@ -69,13 +69,11 @@ if ($_SESSION['sess_name'] == "adminaccountje") {
                                     <input class="input-admin-crud" type="text" value="<?php echo $review['beschrijving'] ?>" name="beschrijving" />
                                     <hr>
                                 </div>
-                                <div class="update">
+                                <div>
                                     <button class="update" type="submit" name="update">Wijzigen</button>
                                 </div>
-                                <div class="delete">
-                                    <button class="delete" type="submit" name="delete">
-                                        <p>Wissen</p>
-                                    </button>
+                                <div>
+                                    <button class="delete" type="submit" name="delete">Wissen</button>
                                 </div>
                             </form>
                         <?php

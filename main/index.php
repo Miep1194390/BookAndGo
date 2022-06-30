@@ -88,7 +88,7 @@ error_reporting(0);
                         <h1 class="AirplaneText">Vluchten</h1>
                     </div>
                     <div class="VluchtenzoekenOuter">
-                        <form class="vluchtenzoeken"  name="form1" method="post" action="vluchten.php">
+                        <form class="vluchtenzoeken"  name="form1" method="post" action="boekenredirect.php">
                             <div class="ZoekenInvoerVeldenOuter">
                                 <h1 class="VluchtenZoekenHeader">Vanaf</h1>
                                 <input class="Vertrekluchthaven" type="text" placeholder="Vertrekluchthaven" name="search" aria-label="Search" required>
@@ -106,7 +106,7 @@ error_reporting(0);
                                 <input class="Bestemming" type="date" placeholder="Bestemming" name="indexcalender" aria-label="Search" required>
                             </div>
                             <div class="ZoekenOuter">
-                                <input class="Zoeken" type="submit" value="Zoeken" name="submit"></input>
+                                <input class="Zoeken" type="submit" onclick="changeDiv()" value="Zoeken" name="submit"></input>
                             </div>
                         </form>
                     </div>
@@ -161,19 +161,18 @@ error_reporting(0);
 
 
 
-        <div class="container_helpdesk">
+        <div id="div" class="container_helpdesk">
             <div class="container_helpdesk_inner">
                 <div class="content_helpdesk">
                     <div class="container_helpdesk_text">
                         <div class="helpdesk_text">
-                            <p class="helpdesk_text">Help ons met het verbeteren van Book and Go!</p>
+                            <p id="test" class="helpdesk_text">Help ons met het verbeteren van Book and Go!</p>
                         </div>
                     </div>
                     <form id="index-form" class="index_form " action="helpdeskredirect.php" method="post">
                         <input class="helpdesk_form_input" type="email" required name="email_helpdesk" id="txtName" placeholder="E-Mail">
-                        <input class="helpdesk_form_input" type="text" required name="message_helpdesk" id="txtName" placeholder="Suggestie">
-                        <input class="helpdesk_form_input_submit" type="submit" name="submit_helpdesk" id="btnCheck" onclick="return ValidateTextBox()" value="Verzenden">
-                        <p id="demo"></p>
+                        <input class="helpdesk_form_input" id="test" type="text" required name="message_helpdesk" id="txtName" placeholder="Suggestie">
+                        <input class="helpdesk_form_input_submit" type="submit" name="submit_helpdesk" onclick="changeDiv()" value="Verzenden">
                     </form>
                 </div>
             </div>
@@ -190,7 +189,7 @@ error_reporting(0);
         </div>
     </footer>
 </body>
-<script src="../js/validation.js"></script>
+<script src="../js/changediv.js"></script>
 <script src="../js/main.js"></script>
 
 </html>

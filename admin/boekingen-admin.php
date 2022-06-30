@@ -1,9 +1,9 @@
 <?php
 include_once('../includes/connect.php');
 session_start();
-if ($_SESSION['sess_name'] == "adminaccountje") {
+if ($_SESSION['sess_name'] == "admin") {
 } else {
-    header('location:index.php');
+    header('location:../main/index.php');
 }
 ?>
 
@@ -83,7 +83,7 @@ if ($_SESSION['sess_name'] == "adminaccountje") {
                                     <input class="input-admin-crud" type="text" value="<?php echo $r['seats'] ?>" name="seats" />
                                     <hr>
                                 </div>
-                                <div class="delete">
+                                <div>
                                     <button class="delete" type="submit" name="delete"><p>Annuleren</p></button>
                                 </div>
                             </form>

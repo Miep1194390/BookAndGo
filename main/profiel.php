@@ -63,7 +63,7 @@ if (isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
                                 <tr>
                                     <th>Email</th>
                                     <th>Gebruikersnaam</th>
-                                    <th>Wachtwoord</th>
+                                    <th>Wachtwoord</th> 
                                     <th>Naam</th>
                                 </tr>
                                 <td><input type="text" value="<?php echo $r['email'] ?>" name="email" /></td>
